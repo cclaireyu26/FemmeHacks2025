@@ -46,7 +46,7 @@ struct ContentView: View {
                             self.isActive = true
                         }
                     }
-                }
+                }.background(Color(red: 254 / 255, green: 234 / 255, blue: 160 / 255))
             }
                 
         }

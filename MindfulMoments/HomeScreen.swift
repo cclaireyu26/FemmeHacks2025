@@ -10,12 +10,19 @@ import SwiftUI
 struct HomeScreen: View {
     var body: some View {
         NavigationStack{
-            VStack(spacing:65) {
+            VStack(spacing:36) {
                 HStack{
-                    VStack(spacing:25){
-                        Text("Mindful \nMoments").font(.custom("Cochin", fixedSize: 25.5)).foregroundColor(Color(red: 5 / 255, green: 10 / 255, blue: 48 / 255))
+                    VStack(spacing:20){
+                        VStack{
+                            Text("Mindful").font(.custom("Cochin", fixedSize: 30)).foregroundColor(Color(red: 5 / 255, green: 10 / 255, blue: 48 / 255)).bold()
+                            Text("Moments").font(.custom("Cochin", fixedSize: 30)).foregroundColor(Color(red: 5 / 255, green: 10 / 255, blue: 48 / 255)).bold()
+                        }
                         
-                        Text("Mental Health and Productivity").font(.custom("Cochin", fixedSize: 20)).foregroundColor(Color(red: 5 / 255, green: 10 / 255, blue: 48 / 255))
+                        VStack{
+                            Text("Mental Health").font(.custom("Cochin", fixedSize: 20)).foregroundColor(Color(red: 5 / 255, green: 10 / 255, blue: 48 / 255))
+                            Text("and Productivity").font(.custom("Cochin", fixedSize: 20)).foregroundColor(Color(red: 5 / 255, green: 10 / 255, blue: 48 / 255))
+                        }
+                        
                     }
                     VStack{
                         
@@ -43,6 +50,13 @@ struct HomeScreen: View {
                         }
                     }
                     
+                    
+                }
+                VStack{
+                    Text("Forgot your password?").font(.custom("Cochin", fixedSize: 20)).foregroundColor(Color(red: 5 / 255, green: 10 / 255, blue: 48 / 255))
+                    NavigationLink(destination: ResetPassword()){
+                        Text("Reset password").font(.custom("Cochin", fixedSize: 20))
+                    }
                 }
                 HStack{
                     Image("bottom-beehive").resizable()

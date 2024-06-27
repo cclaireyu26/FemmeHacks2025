@@ -37,7 +37,7 @@ struct Login: View {
                 
                 
               
-                NavigationLink(destination: HomeScreenLoggedIn()  .navigationBarBackButtonHidden(true)){
+                NavigationLink(destination: NavBar()  .navigationBarBackButtonHidden(true)){
                     Text("Login").padding()
                     
                 }.font(.custom("Cochin", fixedSize: 18)).foregroundColor(Color(red: 5 / 255, green: 10 / 255, blue: 48 / 255)).background(Color(red: 254 / 255, green: 234 / 255, blue: 160 / 255)).cornerRadius(15.0).shadow(radius:15)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3FB369BF2C2DB98C006602E3 /* UploadPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FB369BE2C2DB98C006602E3 /* UploadPhoto.swift */; };
 		3FCB78C72C2C5B5A0072613F /* HomeScreenLoggedIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCB78C62C2C5B5A0072613F /* HomeScreenLoggedIn.swift */; };
 		3FCB78C92C2C5CD80072613F /* ResetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCB78C82C2C5CD80072613F /* ResetPassword.swift */; };
 		3FCB78CB2C2C6E8B0072613F /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCB78CA2C2C6E8B0072613F /* Stats.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3FB369BE2C2DB98C006602E3 /* UploadPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPhoto.swift; sourceTree = "<group>"; };
 		3FCB78C62C2C5B5A0072613F /* HomeScreenLoggedIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenLoggedIn.swift; sourceTree = "<group>"; };
 		3FCB78C82C2C5CD80072613F /* ResetPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPassword.swift; sourceTree = "<group>"; };
 		3FCB78CA2C2C6E8B0072613F /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				3FCB78C82C2C5CD80072613F /* ResetPassword.swift */,
 				3FCBE0272C2B3F3700E9F79F /* Login.swift */,
 				3FCB78C62C2C5B5A0072613F /* HomeScreenLoggedIn.swift */,
+				3FB369BE2C2DB98C006602E3 /* UploadPhoto.swift */,
 				3FCB78CC2C2C8C4A0072613F /* NavBar.swift */,
 				3FCB78D22C2C8DDC0072613F /* StatsProfile.swift */,
 				3FCB78CE2C2C8C720072613F /* Checklist.swift */,
@@ -179,6 +182,7 @@
 				3FCB78D32C2C8DDC0072613F /* StatsProfile.swift in Sources */,
 				C2A93B362C29EF0C00CAEACE /* MindfulMomentsApp.swift in Sources */,
 				3FCBE02A2C2B3F3F00E9F79F /* Signup.swift in Sources */,
+				3FB369BF2C2DB98C006602E3 /* UploadPhoto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

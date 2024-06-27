@@ -17,12 +17,12 @@ struct HomeScreenLoggedIn: View {
 
     
     var body: some View {
-        VStack{
-            NavigationView{
+        NavigationView{
+            VStack{
                 
                 ScrollView{
                     
-                    Text("Welcome NAME!").font(.custom("Cochin", fixedSize: 40)).foregroundColor(Color(red: 5 / 255, green: 10 / 255, blue: 48 / 255)).padding()
+                    Text("Welcome USERNAME!").font(.custom("Cochin", fixedSize: 40)).foregroundColor(Color(red: 5 / 255, green: 10 / 255, blue: 48 / 255)).padding()
                     Spacer()
                     Spacer()
                     
@@ -32,7 +32,7 @@ struct HomeScreenLoggedIn: View {
                         NavigationLink(destination:Stats()){
                             Text("View all ▸").padding().font(.custom("Cochin", fixedSize: 25))
                         }
-                    }//hstack
+                    }//hstack for stats and view all
                     HStack{
                         NavigationLink(destination: Stats()){LazyVGrid(columns:adaptiveColumns, spacing: 30)
                             {
@@ -48,7 +48,7 @@ struct HomeScreenLoggedIn: View {
                                         Rectangle().frame(width:170,height:85).foregroundColor(Color(red: 114/255, green: 161/255, blue: 229/255)).cornerRadius(25)
                                         Text("X photos shared").foregroundColor(.white).font(.custom("Cochin", fixedSize: 30))
                                     }.shadow(radius:6)
-                                }
+                                }//x photos
                             }//lazyvgrid
                         }
                         
@@ -86,7 +86,9 @@ struct HomeScreenLoggedIn: View {
                                 ZStack{
                                     Rectangle().frame(width:170,height:85).foregroundColor(Color(red: 114/255, green: 161/255, blue: 229/255)).cornerRadius(25)
                                     Text("Checklist").foregroundColor(.white).font(.custom("Cochin", fixedSize: 30))
-                                }.shadow(radius:6)}
+                                }.shadow(radius:6)
+                            }
+                            
                             NavigationLink(destination: NutritionChecker()){LazyVGrid(columns:adaptiveColumns, spacing: 30)
                                 {
                                     ZStack{
@@ -94,14 +96,16 @@ struct HomeScreenLoggedIn: View {
                                         Text("Nutritional Checker").foregroundColor(.white).font(.custom("Cochin", fixedSize: 30))
                                     }.shadow(radius:6)
                                 }
-                            }
-                        }
-                        NavigationLink(destination: NutritionChecker()){LazyVGrid(columns:adaptiveColumns, spacing: 30)
+                            }//lazyvgrid2
+                        }//lazyvgrid1
+                        
+                        NavigationLink(destination: UploadPhoto()){LazyVGrid(columns:adaptiveColumns, spacing: 30)
                             {
                                 ZStack{
                                     Rectangle().frame(width:170,height:85).foregroundColor(Color(red: 114/255, green: 161/255, blue: 229/255)).cornerRadius(25)
                                     Text("Photo album").foregroundColor(.white).font(.custom("Cochin", fixedSize: 30))
-                                }.shadow(radius:6)}
+                                }.shadow(radius:6)
+                            }
                             NavigationLink(destination: StatsProfile()){LazyVGrid(columns:adaptiveColumns, spacing: 30)
                                 {
                                     ZStack{
@@ -117,11 +121,20 @@ struct HomeScreenLoggedIn: View {
                    
                         
                 }//scrollview
-            }//navview
+            }//vstack
+            
+            .toolbar {
+                ToolbarItemGroup(placement: .status) {
+                    NavigationLink(destination: NavBar()) {
+                        
+                    }
+                }
+            }
             
             
-        }//vstack
-        NavBar()
+        }//navview
+    
+       // NavBar()
         
 //        TabView(selection:$selectedTab){
 //            homeScreenLoggedIn

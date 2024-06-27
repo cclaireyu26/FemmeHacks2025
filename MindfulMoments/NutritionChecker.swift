@@ -4,6 +4,7 @@
 //
 //  Created by Student on 6/26/24.
 //
+
 //
 //  Nutrition Rater.swift
 //  MindfulMoments
@@ -12,26 +13,29 @@
 //
 import SwiftUI
 struct NutritionChecker: View {
+    @State private var speed = 50.0
+    @State private var isEditing = false
     @State private var foodName = ""
     @State private var addRequest = ""
     @State private var nameofFood = ""
     var foodLibrary = ["spagetti"]
     
     var body: some View {
+     
         NavigationStack{
             VStack (spacing:20){
                 Text("Mindful Moments")
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(Color(hue: 0.522, saturation: 0.294, brightness: 0.911))
-                    .background(Color(red: 254 / 255, green: 234 / 255, blue: 160 / 255))
-                
-                
+                    .padding()
+                    
             }
             
                 //Search Bar
                 
                 HStack{
+                    
                     TextField("Search", text: $foodName)
                         .border(Color.black)
                         .padding(.horizontal, 15.0)
@@ -43,6 +47,7 @@ struct NutritionChecker: View {
                     }
                     
                     .padding(.trailing)
+                    
                
                 }
             
@@ -64,14 +69,17 @@ struct NutritionChecker: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width:150)
                     
-                    Button("Upload\nPhoto\nHere."){
-                           }.buttonStyle(.bordered)
-                        .tint(.blue).font(.largeTitle)
+                    NavigationLink(destination: UploadPhoto()) {
+                        Text("Upload\nPicture\nHere.").fontWeight(.bold)
+                            .tint(.yellow).font(.largeTitle)
+        
+                    }
     
                     
                 }
                     
-            
+              
+
             }
            
          
@@ -81,18 +89,33 @@ struct NutritionChecker: View {
                 
                 
             VStack(alignment: .center){
-                    TextField("Name of Food", text: $nameofFood)
-                    .border(Color.black, width:2)
-                    
-                   
-                    .foregroundColor(/*@START_MENU_TOKEN@*/Color(hue: 0.537, saturation: 0.275, brightness: 0.961)/*@END_MENU_TOKEN@*/)
-                    .padding()
+                Text("Enter food here.")
+                    .font(.headline)
+                    .fontWeight(.bold)
+                    .foregroundColor(.black)
                 
+                TextField("Name of Food", text: $nameofFood)
+                    .border(Color.black, width:2)
+                    .foregroundColor(.black)
+                    .padding()
+
+               
+                Text("Rate: \(nameofFood)")
+                    .font(.headline)
+                    .fontWeight(.bold)
+                    .foregroundColor(.black)
+                Slider(value: $speed,
+                       in: 0...100,
+                       onEditingChanged: { editing in
+                           isEditing = editing
+                       })
                 Link(destination: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=URL@*/URL(string: "https://www.apple.com")!/*@END_MENU_TOKEN@*/) {
                     Text("Recipe & Ingredients")
+                        .padding()
+                        .border(Color(hue: 0.522, saturation: 0.294, brightness: 0.911), width: 3)
+                        .tint(Color.blue)
+                        .cornerRadius(8)
                 }
-                
-                
                     .padding()
                 
                 
@@ -101,6 +124,7 @@ struct NutritionChecker: View {
                 
             
             .padding(.leading)
+            //insert here
             
         }
     }

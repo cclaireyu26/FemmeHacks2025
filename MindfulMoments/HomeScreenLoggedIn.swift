@@ -71,7 +71,7 @@ struct HomeScreenLoggedIn: View {
                                 Text("BeeBee").font(.custom("Cochin", fixedSize: 30)).bold()
                                
                                 
-                                Text("BeeBee the Bee is here to provide you the virtual emotional support that you need. As you check off items on your checklist, Beebee will be there to celebrate iwth you. ").font(.custom("Cochin", fixedSize: 20))
+                                Text("BeeBee the Bee is here to provide you the virtual emotional support that you need. As you check off items on your checklist, Beebee will be there to celebrate with you. ").font(.custom("Cochin", fixedSize: 20))
                                 
                                 
                             }//vstack for bee buddy

@@ -14,15 +14,14 @@ struct HomeScreenLoggedIn: View {
     private let adaptiveColumns = [
         GridItem(.adaptive(minimum: 170))]
     @State private var selectedTab="home"
-
+    @State var username=""
     
     var body: some View {
         NavigationView{
             VStack{
-                
+                Login(enteredUsername: $username)
                 ScrollView{
-                    
-                    Text("Welcome USERNAME!").font(.custom("Cochin", fixedSize: 40)).foregroundColor(Color(red: 5 / 255, green: 10 / 255, blue: 48 / 255)).padding()
+                    Text("Welcome \(username)!").font(.custom("Cochin", fixedSize: 40)).foregroundColor(Color(red: 5 / 255, green: 10 / 255, blue: 48 / 255)).padding()
                     Spacer()
                     Spacer()
                     
@@ -66,7 +65,7 @@ struct HomeScreenLoggedIn: View {
                                     .cornerRadius(15)
                                 Text("BeeBee")
                                 
-                                Text("PURPOSE OF BEE, DESCRIPTION")
+                                Text("BeeBee the Bee is here to provide you the virtual emotional support that you need. ")
                                 
                                 
                             }//vstack for bee buddy
@@ -99,18 +98,18 @@ struct HomeScreenLoggedIn: View {
                             }//lazyvgrid2
                         }//lazyvgrid1
                         
-                        NavigationLink(destination: UploadPhoto()){LazyVGrid(columns:adaptiveColumns, spacing: 30)
+                        NavigationLink(destination: Photos()){LazyVGrid(columns:adaptiveColumns, spacing: 30)
                             {
                                 ZStack{
                                     Rectangle().frame(width:170,height:85).foregroundColor(Color(red: 114/255, green: 161/255, blue: 229/255)).cornerRadius(25)
-                                    Text("Photo album").foregroundColor(.white).font(.custom("Cochin", fixedSize: 30))
+                                    Text("Capture").foregroundColor(.white).font(.custom("Cochin", fixedSize: 30))
                                 }.shadow(radius:6)
                             }
-                            NavigationLink(destination: StatsProfile()){LazyVGrid(columns:adaptiveColumns, spacing: 30)
+                            NavigationLink(destination: Photos()){LazyVGrid(columns:adaptiveColumns, spacing: 30)
                                 {
                                     ZStack{
                                         Rectangle().frame(width:170,height:85).foregroundColor(Color(red: 114/255, green: 161/255, blue: 229/255)).cornerRadius(25)
-                                        Text("Stats").foregroundColor(.white).font(.custom("Cochin", fixedSize: 30))
+                                        Text("Photo Album").foregroundColor(.white).font(.custom("Cochin", fixedSize: 30))
                                     }.shadow(radius:6)
                                 }
                             }
@@ -121,18 +120,19 @@ struct HomeScreenLoggedIn: View {
                    
                         
                 }//scrollview
-            }//vstack
+            }   .background(Color(red: 254/255,green: 234/255,blue: 160/255).opacity(0.55))//vstack
             
-            .toolbar {
-                ToolbarItemGroup(placement: .status) {
-                    NavigationLink(destination: NavBar()) {
-                        
-                    }
-                }
-            }
+//            .toolbar {
+//                ToolbarItemGroup(placement: .status) {
+//                    NavigationLink(destination: NavBar()) {
+//                        
+//                    }
+//                }
+//            }
             
             
-        }//navview
+        }//navview.
+     
     
        // NavBar()
         
@@ -164,13 +164,10 @@ struct HomeScreenLoggedIn: View {
 //            
 //        }
     }//body
-    
+  
 }
 
 
 #Preview {
     HomeScreenLoggedIn()
-    
-      
-    
 }

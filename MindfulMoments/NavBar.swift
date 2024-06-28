@@ -29,7 +29,7 @@ struct NavBar: View {
                     }
                     Photos()
                     .tabItem(){
-                        Image(systemName: "person.circle.fill")
+                        Image(systemName: "camera.fill")
                         Text("Capture")
                     }
           

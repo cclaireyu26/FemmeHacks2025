@@ -19,7 +19,7 @@ struct HomeScreenLoggedIn: View {
     var body: some View {
         NavigationView{
             VStack{
-                Login(enteredUsername: $username)
+                Login(enteredUsername: $username).frame(maxWidth: 0, maxHeight:0).hidden()
                 ScrollView{
                     Text("Welcome \(username)!").font(.custom("Cochin", fixedSize: 40)).foregroundColor(Color(red: 5 / 255, green: 10 / 255, blue: 48 / 255)).padding()
                     Spacer()
@@ -59,13 +59,19 @@ struct HomeScreenLoggedIn: View {
                             Color(red: 114/255, green: 161/255, blue: 229/255).cornerRadius(15)
                                 .ignoresSafeArea()
                             VStack(alignment:.leading, spacing: 20.0){
-                                Image("splashscreen-bee")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit).frame(width:90,height:90)
-                                    .cornerRadius(15)
-                                Text("BeeBee")
+                                HStack{
+                                    Spacer()
+                                    Image("splashscreen-bee")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit).frame(width:120,height:120)
+                                        .cornerRadius(15)
+                                    Spacer()
+                                }
+                     
+                                Text("BeeBee").font(.custom("Cochin", fixedSize: 30)).bold()
+                               
                                 
-                                Text("BeeBee the Bee is here to provide you the virtual emotional support that you need. ")
+                                Text("BeeBee the Bee is here to provide you the virtual emotional support that you need. As you check off items on your checklist, Beebee will be there to celebrate iwth you. ").font(.custom("Cochin", fixedSize: 20))
                                 
                                 
                             }//vstack for bee buddy
@@ -114,7 +120,36 @@ struct HomeScreenLoggedIn: View {
                                 }
                             }
                         }
-                        
+                        HStack{
+                            Text("Our mission").font(.custom("Cochin", fixedSize: 35)).padding()
+                            Spacer()
+                        }
+                        ZStack{
+                            Color(red: 114/255, green: 161/255, blue: 229/255).cornerRadius(15)
+                                .ignoresSafeArea()
+                            VStack(alignment:.leading, spacing: 20.0){
+                                HStack{
+                                    Spacer()
+                                    Image("mindful-moments-logo")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit).frame(width:120,height:120)
+                                        .cornerRadius(15)
+                                    Spacer()
+                                }
+                                
+                                Text("Mindful Moments").font(.custom("Cochin", fixedSize: 30)).bold()
+                              
+                                
+                                Text("Our app, Mindful Moments, is designed to improve our users’ mental health by providing personalized, daily activities and resources that support mental health. \n\nMental health is so important because it affects so many aspects of our lives. Mental health is the state and well-being of our minds, and is closely associated with self image.").font(.custom("Cochin", fixedSize: 20))
+                                
+                                
+                            }//vstack for bee buddy
+                            .padding()
+                            .background(Rectangle().foregroundColor(.white))
+                            .cornerRadius(15)
+                            .shadow(radius:15)
+                            .padding()
+                        }//zstack
                     }.padding()
                         .navigationTitle("Home")
                    

@@ -27,13 +27,14 @@ struct NavBar: View {
                      
                         Text("Nutrition Checker")
                     }
-                    StatsProfile()
+                    Photos()
                     .tabItem(){
                         Image(systemName: "person.circle.fill")
-                        Text("Profile")
+                        Text("Capture")
                     }
+          
         }
-       // .isHidden = true
+     
             
             //EDITED VERSION (but probably the above version is better and should work with that)
             /*
